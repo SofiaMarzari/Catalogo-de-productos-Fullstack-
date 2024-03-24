@@ -5,6 +5,6 @@
 
     RewriteRule \.(?:css|js|jpe?g|gif|png)$ - [L]
 
-    RewriteRule ^api/(.*)$ ruteoApi.php?resource=$1 [QSA,L,END]
+    RewriteRule ^api/(.*)$ routeApi.php?resource=$1 [QSA,L,END]
+    RewriteRule ^(.*)$ index.html?resource=$1 [QSA,L]
 </IfModule>
-

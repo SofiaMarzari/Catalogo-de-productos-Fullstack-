@@ -1,5 +1,5 @@
-USE 'catalogo';
-CREATE TABLE `catalogo`.`productos` (
+USE catalogos;
+CREATE TABLE `productos` (
   `id_producto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(250) NULL,

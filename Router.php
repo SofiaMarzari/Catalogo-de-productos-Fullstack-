@@ -1,4 +1,5 @@
 <?php
+    require_once("routeApi.php");
 
 class Rut{
     public $url;
@@ -56,12 +57,12 @@ class Router{
     private $routeTable = [];
 
     public function addRoute($url, $metodo, $controller, $accion){
-        $this->routeTable = new Rut($url, $metodo, $controller, $accion);
+        $this->routeTable[] = new Rut($url, $metodo, $controller, $accion);
     }
     public function route($url, $metodo){
-        foreach($this->routeTable as $rr){
-            if($rr->match($url, $metodo)){
-                return $rr->run();
+        foreach($this->routeTable as $route){
+            if($route->match($url, $metodo)){
+                return $route->run();
             }
         }
     }
