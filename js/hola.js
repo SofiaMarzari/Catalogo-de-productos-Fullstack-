@@ -27,7 +27,7 @@ async function get_productos() {
             e.forEach(i => {
                 /*elementos DOM creados*/
                 let section_card = document.createElement('section');
-                let h3 = document.createElement('h3');
+                let p = document.createElement('p');
                 //let p = document.createElement('p');
                 let img = document.createElement('img');
                 let btn_vermas = document.createElement('button');
@@ -42,13 +42,13 @@ async function get_productos() {
                 btn_vermas.setAttribute('id', "btn-vermas");
                 btn_vermas.setAttribute('value', i.id_producto);
                 btn_vermas.appendChild(btn_text);
-                h3.appendChild(titulo);
+                p.appendChild(titulo);
                 //p.appendChild(descripcion);
 
                 /*agregando elementos creados al section*/
                 //section.appendChild(p);
                 section_card.appendChild(img);
-                section_card.appendChild(h3);
+                section_card.appendChild(p);
                 section_card.appendChild(btn_vermas);
 
                 /*EVENTO a cada boton que se crea*/
@@ -154,6 +154,7 @@ async function ver_mas(id_prod = 0) {
             //console.log(e.datos[0].nombre); //OK
             container.removeChild(container.firstChild);
             let section_principal = document.createElement('section');
+            section_principal.setAttribute('id', 'section-principal');
             /****************SECTION DETALLES****************/
             let section_detalle = document.createElement('section-detalle');
             //Nombre
@@ -173,6 +174,7 @@ async function ver_mas(id_prod = 0) {
             let text_btn_editar = document.createTextNode("Editar producto");
             btn_editar.appendChild(text_btn_editar);
             btn_editar.setAttribute('class', 'btn btn-warning');
+            btn_editar.setAttribute('id', 'btn-edicion');
             btn_editar.addEventListener('click', mostrar_edicion);
             //append...
             section_detalle.appendChild(h3);
@@ -181,11 +183,13 @@ async function ver_mas(id_prod = 0) {
             section_detalle.appendChild(btn_editar);
             /****************fin SECTION DETALLES****************/
             /****************SECTION DE IMAGENES****************/
-            let section_imagenes = documente.createElement('section');
+            let section_imagenes = document.createElement('section');
+            section_imagenes.setAttribute('id', 'section-imagenes');
             //imagen principal
-            let section_imagenprincipal = documente.createElement('section');
+            let section_imagenprincipal = document.createElement('section');
             let img_principal = document.createElement('img');
             img_principal.setAttribute('src', e.datos[0].imagen);
+            img_principal.setAttribute('class', 'img-principal');
             section_imagenprincipal.appendChild(img_principal);
 
             //sub-imagenes
@@ -227,7 +231,7 @@ async function ver_mas(id_prod = 0) {
             section_agregarimagen.appendChild(input_file);
             section_agregarimagen.appendChild(btn_addimagen);
             section_imagenes.appendChild(section_agregarimagen);
-            /*******FIN SUB SECTION AGREGAR IMAGEN********/
+            /*******fin SUB SECTION AGREGAR IMAGEN********/
 
             /****************fin SECTION DE IMAGENES ****************/
             /****************SECTION EDICION ****************/ //inicialmente oculta
@@ -253,6 +257,7 @@ async function ver_mas(id_prod = 0) {
             btn_update_producto.appendChild(text_btn_update);
             btn_update_producto.setAttribute('value', id);
             btn_update_producto.setAttribute('class', 'btn btn-success');
+            btn_update_producto.setAttribute('id', 'btn-confirmar-cambios');
             btn_update_producto.addEventListener('click', editar_producto);
 
             section_edicion.appendChild(input_text_nombre);
@@ -260,14 +265,14 @@ async function ver_mas(id_prod = 0) {
             section_edicion.appendChild(input_number_cant);
             section_edicion.appendChild(btn_update_producto);
             /****************fin SECTION EDICION ****************/
-            section_principal.appendChild(section_detalle);
             section_principal.appendChild(section_imagenes);
+            section_principal.appendChild(section_detalle);
             section_principal.appendChild(section_edicion);
 
             container.appendChild(section_principal);
         }
     } catch (response) {
-        container.innerHTML = '<h3>404 Page Not Found</h3>';
+        container.innerHTML = '<h3>404 - Page Not Found</h3>';
     }
 }
 
