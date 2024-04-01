@@ -1,6 +1,6 @@
 <?php
     require_once('api/viewApi.php');
-    require_once('model/model.php');
+    require_once('model/modell.php');
 
     class ControllerApi{
 

@@ -1,0 +1,283 @@
+body {
+    background-color: rgba(88, 0, 189, 0.781);
+}
+
+header {
+    text-align: center;
+    background-color: rgba(88, 0, 189, 0.781);
+    color: antiquewhite;
+    height: 60px;
+    padding-top: 5px;
+}
+
+.section-container {
+    width: 100%;
+    height: auto;
+    padding: 1% 0% 1% 0%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.section-agregar {
+    background-color: rgba(149, 75, 233, 0.404);
+    padding-bottom: 10px;
+}
+
+.div-container-agregar {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.div-container-agregar>div {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1%;
+}
+
+#input-imagen {
+    font-size: 14px;
+    height: 30px;
+}
+
+#input-cantidad {
+    width: 50px;
+}
+
+label {
+    /*font-size: 13px;*/
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+input {
+    height: 25px;
+}
+
+#btn-agregar-producto,
+#btn-edicion,
+#btn-confirmar-cambios {
+    margin: 10px;
+    width: 135px;
+    font-size: small;
+}
+
+#btn-agregar-producto {
+    margin-top: -7px;
+    margin-left: 20px;
+    height: 35px;
+}
+
+#button-subir-imagen {
+    width: 135px;
+    font-size: small;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-left: 10px;
+}
+
+
+/************SECTION CARD***************/
+
+.section-card {
+    width: 250px;
+    background-color: white;
+    margin: 1%;
+    margin-left: 10%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    height: 350px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.section-card>img {
+    width: 250px;
+    height: 250px;
+}
+
+.section-card>p {
+    margin-bottom: 0px;
+}
+
+.section-card>button {
+    border-style: none;
+    background-color: rgba(88, 0, 189, 0.781);
+    color: white;
+    border-radius: 40%;
+    width: 100px;
+    height: 25px;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    font-size: smaller;
+}
+
+.section-card>button:hover {
+    opacity: 0.8;
+}
+
+.opacity {
+    opacity: 0.3;
+}
+
+.section-card>p {
+    margin-top: 2px;
+    width: 230px;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+
+/*************************/
+
+#section-principal {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+
+/***********SECTION IMAGENES**************/
+
+#section-imagenes {
+    width: 40%;
+    margin-left: 40px;
+}
+
+.img-principal {
+    width: 100%;
+    height: 500px;
+}
+
+.section-detalle {
+    margin-left: 40px;
+    margin-right: 20px;
+    width: 60%;
+    margin-top: 30px;
+}
+
+.section-subimagenes {
+    display: flex;
+    flex-direction: row;
+}
+
+.article-imagen {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-left: 2px;
+}
+
+.article-imagen>img {
+    width: 150px;
+    z-index: -1;
+    position: relative;
+    bottom: 30px;
+}
+
+#btn-eliminar-imagen {
+    position: relative;
+    z-index: 2;
+    left: 125px;
+}
+
+.section-agregarimagenform {
+    width: 70%;
+    height: 100px;
+    margin-top: 15%;
+    padding: 10px;
+    background-color: rgba(149, 75, 233, 0.404);
+}
+
+.section-agregarimagenform>input {
+    height: 30px;
+}
+
+.section-agregarimagenform[data-on='on'] {
+    transform: scale(1);
+}
+
+.section-agregarimagenform[data-on='off'] {
+    transform: scale(0);
+}
+
+
+/*************************/
+
+
+/***********SECTION EDICION**************/
+
+.section-edicion {
+    left: 37%;
+    top: 30%;
+    position: absolute;
+    transition: transform 300ms;
+    background: rgba(149, 75, 233, 0.918);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
+}
+
+#btn-cerrar-edicion {
+    background: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 93%;
+    bottom: 4%;
+    border-style: none;
+    font-size: 20px;
+}
+
+#btn-confirmar-cambios {
+    margin-left: 31%;
+}
+
+.section-edicion>input {
+    width: 300px;
+}
+
+.section-edicion>label {
+    margin-left: 0px;
+}
+
+.section-edicion>svg {
+    position: relative;
+    left: 93%;
+    bottom: 4%;
+}
+
+#input-editar-cantidad {
+    width: 50px;
+}
+
+.section-edicion[data-on='on'] {
+    transform: scale(1);
+}
+
+.section-edicion[data-on='off'] {
+    transform: scale(0);
+}
+
+
+/*************************/
+
+
+/***********FOOTER**************/
+
+footer {
+    text-align: center;
+    color: rgba(88, 0, 189, 0.781);
+}
+
+
+/*************************/
